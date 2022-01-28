@@ -8,6 +8,8 @@ function App() {
     <>
       <Header />
       <SideNav />
+      <Home />
+      <Footer />
     </>
   )
 }
