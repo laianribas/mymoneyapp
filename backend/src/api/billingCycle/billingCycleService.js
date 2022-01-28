@@ -10,12 +10,14 @@ BillingCycle.after('post', errorHandler).after('put', errorHandler)
 
 BillingCycle.route('get', (req, res, next) => {
     BillingCycle.find({}, (err, docs) => {
-        if (!err) {
-            res.json(docs)
-        } else {
-            res.status(500).json({ errors: [error] })
-        }
-    })
+            if (!err) {
+                res.json(docs)
+            } else {
+                res.status(500).json({ errors: [error] })
+            }
+        })
+        .limit(0)
+        .skip(0)
 })
 
 BillingCycle.route('count', (req, res, next) => {
