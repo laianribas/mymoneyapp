@@ -13,10 +13,10 @@ const Menu = () => {
           role="menu"
           data-accordion="false"
         >
-          <MenuItem path="#" icon="fas fa-tachometer-alt" label="Dashboard" />
+          <MenuItem path="/" icon="fas fa-tachometer-alt" label="Dashboard" />
           <MenuTree icon="fa fa-edit" label="Cadastro">
             <MenuItem
-              path="#billingcycles"
+              path="billingcycles"
               icon="fas fa-hand-holding-usd"
               label="Ciclo de Pagamento"
             />
