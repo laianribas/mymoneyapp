@@ -1,0 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+body {
+    font-family: Roboto, sans-serif;
+}
+
+#chart {
+    max-height: 50px;
+    max-width: 80%;
+    margin: 35px auto;
+}
