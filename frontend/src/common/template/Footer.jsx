@@ -10,7 +10,7 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          Laian Ribas
+          Laian Ribas Nascimento
         </a>
         .
       </strong>
