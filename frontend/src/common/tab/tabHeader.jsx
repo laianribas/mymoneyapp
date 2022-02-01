@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { seletcTab } from './tabActions'
+import { selectTab } from './tabActions'
 class TabHeader extends Component {
   render() {
     const selected = this.props.tab.selected === this.props.target
@@ -20,7 +20,7 @@ class TabHeader extends Component {
           type="button"
           role="tab"
           aria-controls={this.props.target}
-          onClick={() => this.props.seletcTab(this.props.target)}
+          onClick={() => this.props.selectTab(this.props.target)}
         >
           <i className={`fas fa-${this.props.icon}`}></i> {this.props.label}
         </button>
@@ -30,7 +30,7 @@ class TabHeader extends Component {
 }
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ seletcTab }, dispatch)
+  bindActionCreators({ selectTab }, dispatch)
 
 const mapStateToProps = (state) => {
   return {
