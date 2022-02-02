@@ -1,16 +1,37 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { reduxForm, Field } from 'redux-form'
+import LabelAndInput from '../common/form/labelAndInput'
 
 export class BillingCycleForm extends Component {
   render() {
     const { handleSubmit } = this.props
     return (
-      <form role="form" onSubmit={handleSubmit}>
-        <div className="box-body">
-          <Field name="name" component="input" />
-          <Field name="month" component="input" />
-          <Field name="year" component="input" />
+      <form role="form" onSubmit={handleSubmit} style={{ marginTop: '10px' }}>
+        <div className="box-body row">
+          <Field
+            name="name"
+            component={LabelAndInput}
+            label="Nome"
+            cols="12 4"
+            placeholder="Informe o nome"
+          />
+          <Field
+            name="month"
+            component={LabelAndInput}
+            type="number"
+            label="Mês"
+            cols="12 4"
+            placeholder="Informe o mês"
+          />
+          <Field
+            name="year"
+            component={LabelAndInput}
+            type="number"
+            label="Ano"
+            cols="12 4"
+            placeholder="Informe o ano"
+          />
         </div>
         <div className="box-footer">
           <button type="submit" className="btn btn-primary">

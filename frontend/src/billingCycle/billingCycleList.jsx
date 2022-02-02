@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { getList } from './billingCycleActions'
+import { getList, showUpdate } from './billingCycleActions'
 
 class BillingCycleList extends Component {
   componentWillMount() {
@@ -16,6 +16,14 @@ class BillingCycleList extends Component {
         <td>{row.name}</td>
         <td>{row.month}</td>
         <td>{row.year}</td>
+        <td>
+          <button
+            className="btn btn-warning"
+            onClick={() => this.props.showUpdate(row)}
+          >
+            <i className="fas fa-pen"></i>
+          </button>
+        </td>
       </tr>
     ))
   }
@@ -28,6 +36,7 @@ class BillingCycleList extends Component {
               <th>Nome</th>
               <th>Mês</th>
               <th>Ano</th>
+              <th>Ações</th>
             </tr>
           </thead>
           <tbody>{this.renderRows()}</tbody>
@@ -40,6 +49,6 @@ class BillingCycleList extends Component {
 const mapStateToProps = (state) => ({ list: state.billingCycles.list })
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ getList }, dispatch)
+  bindActionCreators({ getList, showUpdate }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(BillingCycleList)

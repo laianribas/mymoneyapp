@@ -1,3 +1,4 @@
+import Messages from '../common/msg/messages'
 import Footer from '../common/template/Footer'
 import Header from '../common/template/Header'
 import SideNav from '../common/template/SideNav'
@@ -12,6 +13,7 @@ function App() {
         <AppRoutes />
       </div>
       <Footer />
+      <Messages />
     </>
   )
 }
