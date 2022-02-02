@@ -1,6 +1,5 @@
 import Footer from '../common/template/Footer'
 import Header from '../common/template/Header'
-import Home from '../common/template/Home'
 import SideNav from '../common/template/SideNav'
 import AppRoutes from './AppRoutes'
 
