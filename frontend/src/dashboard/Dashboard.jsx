@@ -14,7 +14,7 @@ export class Dashboard extends Component {
   render() {
     const { credit, debt } = this.props.summary
     return (
-      <div>
+      <>
         <ContentHeader title="Dashboard" subTitle="version 1.0.0" />
         <Content>
           <div className="container-fluid">
@@ -24,14 +24,14 @@ export class Dashboard extends Component {
                 color="green"
                 icon="piggy-bank"
                 value={`R$ ${credit}`}
-                text="Totela de créditos"
+                text="Total de créditos"
               />
               <ValueBox
                 cols="12 4"
                 color="red"
                 icon="credit-card"
                 value={`R$ ${debt}`}
-                text="Totela de débitos"
+                text="Total de débitos"
               />
               <ValueBox
                 cols="12 4"
@@ -43,7 +43,7 @@ export class Dashboard extends Component {
             </div>
           </div>
         </Content>
-      </div>
+      </>
     )
   }
 }

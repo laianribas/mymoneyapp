@@ -5,7 +5,7 @@ import { selectTab, showTabs } from '../common/tab/tabActions'
 
 const URL = 'http://localhost:3003/api'
 
-const INITIAL_VALUES = {}
+const INITIAL_VALUES = { credits: [{}], debts: [{}] }
 
 export function init() {
     return [

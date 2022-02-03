@@ -5,3 +5,12 @@
 .table-action {
     width: 150px
 }
+
+.btn.btn-warning {
+    color: white
+}
+
+.table td,
+.table th {
+    padding: 0.46rem;
+}
