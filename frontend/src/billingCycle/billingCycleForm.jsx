@@ -8,7 +8,7 @@ import LabelAndInput from '../common/form/labelAndInput'
 
 export class BillingCycleForm extends Component {
   render() {
-    const { handleSubmit } = this.props
+    const { handleSubmit, readOnly } = this.props
     return (
       <form role="form" onSubmit={handleSubmit} style={{ marginTop: '10px' }}>
         <div className="box-body row">
@@ -18,6 +18,7 @@ export class BillingCycleForm extends Component {
             label="Nome"
             cols="12 4"
             placeholder="Informe o nome"
+            readOnly={readOnly}
           />
           <Field
             name="month"
@@ -26,6 +27,7 @@ export class BillingCycleForm extends Component {
             label="Mês"
             cols="12 4"
             placeholder="Informe o mês"
+            readOnly={readOnly}
           />
           <Field
             name="year"
@@ -34,11 +36,12 @@ export class BillingCycleForm extends Component {
             label="Ano"
             cols="12 4"
             placeholder="Informe o ano"
+            readOnly={readOnly}
           />
         </div>
         <div className="box-footer">
-          <button type="submit" className="btn btn-primary">
-            Submit
+          <button type="submit" className={`btn btn-${this.props.submitClass}`}>
+            {this.props.submitLabel}
           </button>
           <button
             type="button"

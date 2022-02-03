@@ -4,6 +4,8 @@ import Header from '../common/template/Header'
 import SideNav from '../common/template/SideNav'
 import AppRoutes from './AppRoutes'
 
+import './custom.css'
+
 function App() {
   return (
     <>

@@ -10,11 +10,10 @@ import TabsContent from '../common/tab/tabsContent'
 import TabHeader from '../common/tab/tabHeader'
 import TabContent from '../common/tab/tabContent'
 import BillingCycleList from './billingCycleList'
-
-import { create, update } from './billingCycleActions'
-
-import { selectTab, showTabs } from '../common/tab/tabActions'
 import BillingCycleForm from './billingCycleForm'
+
+import { create, update, remove } from './billingCycleActions'
+import { selectTab, showTabs } from '../common/tab/tabActions'
 
 export class BillingCycle extends Component {
   componentWillMount() {
@@ -38,13 +37,26 @@ export class BillingCycle extends Component {
                 <BillingCycleList />
               </TabContent>
               <TabContent id="tabCreate">
-                <BillingCycleForm onSubmit={this.props.create} />
+                <BillingCycleForm
+                  onSubmit={this.props.create}
+                  submitLabel="Incluir"
+                  submitClass="primary"
+                />
               </TabContent>
               <TabContent id="tabUpdate">
-                <BillingCycleForm onSubmit={this.props.update} />
+                <BillingCycleForm
+                  onSubmit={this.props.update}
+                  submitLabel="Alterar"
+                  submitClass="info"
+                />
               </TabContent>
               <TabContent id="tabDelete">
-                <h1>Excluir</h1>
+                <BillingCycleForm
+                  onSubmit={this.props.remove}
+                  readOnly
+                  submitLabel="Excluir"
+                  submitClass="danger"
+                />
               </TabContent>
             </TabsContent>
           </Tabs>
@@ -57,6 +69,6 @@ export class BillingCycle extends Component {
 const mapStateToProps = (state) => ({ tab: state.tab })
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ selectTab, showTabs, create, update }, dispatch)
+  bindActionCreators({ selectTab, showTabs, create, update, remove }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(BillingCycle)
