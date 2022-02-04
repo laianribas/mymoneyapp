@@ -1,3 +1,4 @@
+import React from 'react'
 const ContentHeader = (props) => {
   return (
     <section className="content-header">

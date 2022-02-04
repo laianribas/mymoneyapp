@@ -2,21 +2,22 @@ import Messages from '../common/msg/messages'
 import Footer from '../common/template/Footer'
 import Header from '../common/template/Header'
 import SideNav from '../common/template/SideNav'
-import AppRoutes from './AppRoutes'
+import Routes from './routes'
+import React from 'react'
+
+import { HashRouter } from 'react-router-dom'
 
 import './custom.css'
 
 function App() {
   return (
-    <>
+    <HashRouter>
       <Header />
       <SideNav />
-      <div className="content-wrapper">
-        <AppRoutes />
-      </div>
+      <Routes />
       <Footer />
       <Messages />
-    </>
+    </HashRouter>
   )
 }
 

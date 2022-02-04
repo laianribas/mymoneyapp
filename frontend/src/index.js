@@ -6,8 +6,14 @@ import { Provider } from 'react-redux'
 import Promise from 'redux-promise'
 import Multi from 'redux-multi'
 import Thunk from 'redux-thunk'
-import App from './main/App'
 import reducers from './main/reducers'
+import { Routes, Route, IndexRoute, Redirect } from 'react-router'
+//import Routes from './main/routes'
+
+import AuthOrApp from './main/authOrApp'
+import Dashboard from './dashboard/Dashboard'
+import BillingCycle from './billingCycle/BillingCycle'
+import { Auth } from './auth/auth'
 
 const devTools =
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -19,7 +25,7 @@ const store = applyMiddleware(Multi, Thunk, Promise)(createStore)(
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
-      <App />
+      <AuthOrApp />
     </Provider>
   </BrowserRouter>,
   document.getElementById('root')
