@@ -1,32 +1,27 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
-import { createStore, applyMiddleware } from 'redux'
+import { applyMiddleware, createStore } from 'redux'
 import { Provider } from 'react-redux'
-import Promise from 'redux-promise'
-import Multi from 'redux-multi'
-import Thunk from 'redux-thunk'
-import reducers from './main/reducers'
-import { Routes, Route, IndexRoute, Redirect } from 'react-router'
-//import Routes from './main/routes'
+import registerServiceWorker from './registerServiceWorker'
+
+import promise from 'redux-promise'
+import multi from 'redux-multi'
+import thunk from 'redux-thunk'
 
 import AuthOrApp from './main/authOrApp'
-import Dashboard from './dashboard/Dashboard'
-import BillingCycle from './billingCycle/BillingCycle'
-import { Auth } from './auth/auth'
+import reducers from './main/reducers'
 
 const devTools =
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-const store = applyMiddleware(Multi, Thunk, Promise)(createStore)(
+const store = applyMiddleware(multi, thunk, promise)(createStore)(
   reducers,
   devTools
 )
-
 ReactDOM.render(
-  <BrowserRouter>
-    <Provider store={store}>
-      <AuthOrApp />
-    </Provider>
-  </BrowserRouter>,
-  document.getElementById('root')
+  <Provider store={store}>
+    <AuthOrApp />
+  </Provider>,
+  document.getElementById('app')
 )
+
+registerServiceWorker()

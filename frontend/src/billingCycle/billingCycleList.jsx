@@ -55,7 +55,7 @@ class BillingCycleList extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({ list: state.billingCycles.list })
+const mapStateToProps = (state) => ({ list: state.billingCycle.list })
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators({ getList, showUpdate, showDelete }, dispatch)

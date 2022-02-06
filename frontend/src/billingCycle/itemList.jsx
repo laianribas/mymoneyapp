@@ -52,29 +52,31 @@ export class ItemList extends Component {
           </td>
         </If>
         <td>
-          <div className="column">
-            <button
-              type="button"
-              class="btn btn-success"
-              onClick={() => this.add(i + 1)}
-            >
-              <i class="fas fa-plus"></i>
-            </button>
-            <button
-              type="button"
-              class="btn btn-warning"
-              onClick={() => this.add(i + 1, row)}
-            >
-              <i class="far fa-copy"></i>
-            </button>
-            <button
-              type="button"
-              className="btn btn-danger"
-              onClick={() => this.remove(i)}
-            >
-              <i className="fas fa-trash-alt"></i>
-            </button>
-          </div>
+          <If test={!this.props.readOnly}>
+            <div className="column">
+              <button
+                type="button"
+                className="btn btn-success"
+                onClick={() => this.add(i + 1)}
+              >
+                <i className="fas fa-plus"></i>
+              </button>
+              <button
+                type="button"
+                className="btn btn-warning"
+                onClick={() => this.add(i + 1, row)}
+              >
+                <i className="far fa-copy"></i>
+              </button>
+              <button
+                type="button"
+                className="btn btn-danger"
+                onClick={() => this.remove(i)}
+              >
+                <i className="fas fa-trash-alt"></i>
+              </button>
+            </div>
+          </If>
         </td>
       </tr>
     ))
@@ -92,7 +94,9 @@ export class ItemList extends Component {
                 <If test={this.props.showStatus}>
                   <th>Status</th>
                 </If>
-                <th className="table-action">Ações</th>
+                <If test={!this.props.readOnly}>
+                  <th className="table-action">Ações</th>
+                </If>
               </tr>
             </thead>
             <tbody>{this.renderRows()}</tbody>

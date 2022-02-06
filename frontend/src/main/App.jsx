@@ -1,24 +1,23 @@
-import Messages from '../common/msg/messages'
-import Footer from '../common/template/Footer'
-import Header from '../common/template/Header'
-import SideNav from '../common/template/SideNav'
-import Routes from './routes'
+import './custom.css'
 import React from 'react'
 
 import { HashRouter } from 'react-router-dom'
 
-import './custom.css'
+import Header from '../common/template/Header'
+import SideBar from '../common/template/SideNav'
+import Footer from '../common/template/Footer'
+import Messages from '../common/msg/messages'
 
-function App() {
-  return (
-    <HashRouter>
+import Routes from './routes'
+
+export default (props) => (
+  <HashRouter>
+    <div className="wrapper">
       <Header />
-      <SideNav />
+      <SideBar />
       <Routes />
       <Footer />
       <Messages />
-    </HashRouter>
-  )
-}
-
-export default App
+    </div>
+  </HashRouter>
+)
