@@ -1,13 +1,19 @@
 .wrapper {
-    background-color: #fff!important;
+    background-color: #454d55!important;
+}
+
+.login-container {
+    height: 100vh
 }
 
 .login-box-body {
-    background-color: #eee;
+    padding: 20px;
+    background-color: #343a40;
+    border-radius: 10px
 }
 
 .login-box button {
-    margin-left: 0px;
+    margin-left: 6px;
 }
 
 .login-box a:hover {
